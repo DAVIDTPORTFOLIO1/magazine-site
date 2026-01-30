@@ -460,16 +460,39 @@ display: block;
   }
 }
 
-/* MOBILE */
+/* MOBILE NAV */
 @media (max-width: 768px) {
   .menu-icon {
     display: block;
   }
 
- @media (max-width: 768px) {
-  .menu-icon {
-    display: block;
+  .nav-links {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background: #ffffff;
+    flex-direction: column;
+    display: none;
+    border-top: 1px solid #eee;
   }
+
+  #menu-toggle:checked + .menu-icon + .nav-links {
+    display: flex;
+  }
+
+  .dropdown-menu {
+    position: static;
+    background: #ffffff;
+    border-top: 1px solid #eee;
+  }
+
+  .dropdown > a {
+    display: block;
+    cursor: pointer;
+  }
+}
+
 
   .nav-links {
     position: absolute;
