@@ -632,11 +632,11 @@ display: block;
   }
 }
 @media (max-width: 768px) {
-  .magazine-logo {
-    max-width: 520px;
+  .magazine-header {
+    background: #f0f0f0;
   }
 
-  .magazine-header {
-    padding: 3rem 1rem 2.5rem;
+  .magazine-logo {
+    max-width: 650px;
   }
 }
