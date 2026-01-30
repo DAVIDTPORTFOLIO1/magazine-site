@@ -514,7 +514,7 @@ display: block;
     background: #ffffff;
     border-top: 1px solid #eee;
   }
-}
+
 
 
   .dropdown-menu {
@@ -531,7 +531,7 @@ display: block;
   .dropdown > a:active + .dropdown-menu {
     display: block;
   }
-}
+
 
 /* POLISH */
 .main-nav {
