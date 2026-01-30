@@ -479,6 +479,27 @@ display: block;
     display: none;
     border-top: 1px solid #eee;
   }
+/* MOBILE CONTENT SCALING */
+@media (max-width: 768px) {
+
+  .magazine-header {
+    padding: 2rem 1rem;
+  }
+
+  .magazine-logo {
+    width: 90vw;
+    max-width: none;
+  }
+
+  .photo-grid {
+    padding: 20px 16px;
+  }
+
+  .card-title {
+    font-size: 1.15rem;
+  }
+
+}
 
   #menu-toggle:checked + .menu-icon + .nav-links {
     display: flex;
