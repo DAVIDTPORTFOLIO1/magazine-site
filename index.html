@@ -1,101 +1,127 @@
 <!DOCTYPE html>
-<html>
-  <head>
-   <title>David Tozer | Portfolio</title>
-  <link rel="stylesheet" href="./style.css?v=2">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>David Tozer | Web Developer</title>
+  <meta name="description" content="David Tozer – trainee web developer building modern, responsive websites using HTML, CSS, JavaScript, WordPress and AI-assisted workflows.">
 
-  </head>
+<meta name="author" content="David Tozer">
 
-  <body>
- <div class="container">
+<!-- Open Graph (social sharing) -->
+<meta property="og:title" content="David Tozer | Web Developer Portfolio">
+<meta property="og:description" content="Portfolio showcasing modern front-end and WordPress projects.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="images/magazine.jpeg">
+<meta property="og:url" content="https://your-github-pages-url-here">
 
+<!-- Instagram (same Open Graph tags are used) -->
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="index.css">
+</head>
+
+
+<body>
+
+  <!-- Navigation -->
+<body>
+
+<!-- Navigation -->
 <nav class="main-nav">
-  <div class="nav-container">
-
-    <div class="logo">My Site</div>
-
-    <input type="checkbox" id="menu-toggle">
-    <label for="menu-toggle" class="menu-icon">☰</label>
-
-    <ul class="nav-links">
-      <li><a href="index.html">Home</a></li>
-
-      <li class="dropdown">
-        <a href="#">Projects ▾</a>
-        <ul class="dropdown-menu">
-          <li><a href="magazine.html">Magazine</a></li>
-          <li><a href="#">Future Project</a></li>
-        </ul>
-      </li>
-
-      <li class="dropdown">
-  <span class="dropdown-label">Contact ▾</span>
-  <ul class="dropdown-menu">
-    <li class="contact-item">
-      <span class="contact-label">Email</span>
-      <a href="mailto:youremail@email.com">davetozer80@googlemail.com</a>
-    </li>
-    <li class="contact-item">
-      <span class="contact-label">Phone</span>
-      <a href="tel:+447000000000">+44 7885768176</a>
-    </li>
+  <ul class="nav-links">
+    <li><a href="#home">Home</a></li>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#contact">Contact</a></li>
   </ul>
-</li>
-
-
-  </div>
 </nav>
 
 
 
 
 
-  <header>
-    <h1>David Tozer</h1>
-    <h2>Aspiring Web Developer</h2>
+  <!-- Hero -->
+  <header class="hero">
+    <div class="hero-content">
+      <h1>Hi, I’m David</h1>
+      <h2><span id="typewriter"></span></h2>
+    </div>
   </header>
-
-  <section>
-    <p>
-      I’m learning web development and building projects to start a new career in tech.
-    </p>
-  </section>
-
-<section>
-  <h3>My Projects</h3>
+<section id="projects">
+  <h2>Projects</h2>
 
   <div class="projects">
-<a href="magazine.html" class="project-link">
-  <div class="project-card">
-    <h4>Portfolio Website</h4>
-    <p>This is my personal portfolio site built with HTML and CSS.</p>
-  </div>
-</a>
 
-    <div class="project-card">
-      <h4>To-Do App</h4>
-      <p>A JavaScript app to manage daily tasks (coming soon).</p>
-    </div>
+    <!-- Magazine project -->
+    <a href="magazine.html" class="project-card slide-left">
+      <div class="project-image">
+        <img src="images/magazine.jpeg" alt="Online magazine project">
+      </div>
+      <div class="project-info">
+        <h3>Online Magazine</h3>
+        <p>Magazine-style website built with HTML and CSS.</p>
+      </div>
+    </a>
 
-    <div class="project-card">
-      <h4>Business Website</h4>
-      <p>A multi-page business website design (coming soon).</p>
-    </div>
+    <!-- WordPress project -->
+    <a href="#" class="project-card slide-right">
+      <div class="project-image">
+        <img src="images/wordpress.jpeg" alt="WordPress blog project">
+      </div>
+      <div class="project-info">
+        <h3>WordPress Blog</h3>
+        <p>Personal fishing blog built with WordPress.</p>
+      </div>
+    </a>
 
   </div>
 </section>
 
 
-  <section>
-    <h3>Contact</h3>
-    <p>Email: Davetozer80@googlemail.com</p>
+
+  <!-- Skills -->
+  <section class="skills-section">
+    <h3>Skills & Tools</h3>
+    <ul class="skills-list">
+      <li>HTML5</li>
+      <li>CSS3</li>
+      <li>JavaScript</li>
+      <li>WordPress</li>
+      <li>Shopify</li>
+      <li>GitHub</li>
+      <li>AI-assisted development</li>
+    </ul>
   </section>
-</div>   <!-- end of container -->
+
+  <!-- About -->
+  <section id="about" class="about-section">
+    <h3>About Me</h3>
+    <p>
+  I build clean, responsive websites with a focus on practical, real-world work.
+  I also run a personal fishing blog at
+  <strong>stillwaterandlight</strong>.
+</p>
+
+  </section>
+
+  <!-- Contact -->
+  <section id="contact" class="contact-section">
+    <h3>Get in Touch</h3>
+    <p>
+      <a href="mailto:davetozer80@googlemail.com">davetozer80@googlemail.com</a>
+    </p>
+  </section>
+
   <footer>
-  <p>© 2026 David Tozer — Built with HTML & CSS</p>
-</footer
+    <p>
+  © 2026 David Tozer ·
+  <a href="https://www.instagram.com/stillwaterandlight/" target="_blank">
+    Instagram
+  </a>
+</p>
 
+  </footer>
+
+
+  <script src="script.js"></script>
 </body>
-
 </html>
