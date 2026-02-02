@@ -1,15 +1,14 @@
-window.addEventListener('DOMContentLoaded', () => {
+document.addEventListener("DOMContentLoaded", () => {
   const lines = document.querySelectorAll("#typewriter-text li");
+  const lemonade = document.getElementById("lemonade-img");
 
   let currentLine = 0;
 
   function typeLine(line, callback) {
-    // Grab only the first text node (before any <img>)
     const textNode = Array.from(line.childNodes).find(n => n.nodeType === Node.TEXT_NODE);
     const text = textNode ? textNode.textContent : "";
-    if (textNode) textNode.textContent = ""; // clear the text for typing
-
-    line.style.opacity = 1; // make the line visible
+    if (textNode) textNode.textContent = "";
+    line.style.opacity = 1;
 
     let charIndex = 0;
     const interval = setInterval(() => {
@@ -18,13 +17,15 @@ window.addEventListener('DOMContentLoaded', () => {
         charIndex++;
       } else {
         clearInterval(interval);
-        // reveal any child elements like <img>
-        line.querySelectorAll("img").forEach(img => {
-          img.style.display = "block";
-        });
-        callback(); // move to next line
+
+        // If this is the lemonade line, reveal the image AFTER
+        if (line.id === "lemonade-line" && lemonade) {
+          lemonade.style.display = "inline-block";
+        }
+
+        callback();
       }
-    }, 50); // typing speed
+    }, 50);
   }
 
   function startTypewriter() {
@@ -32,7 +33,7 @@ window.addEventListener('DOMContentLoaded', () => {
       if (currentLine < lines.length) {
         typeLine(lines[currentLine], () => {
           currentLine++;
-          setTimeout(nextLine, 500); // delay between lines
+          setTimeout(nextLine, 500);
         });
       }
     }
