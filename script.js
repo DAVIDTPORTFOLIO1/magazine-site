@@ -1,77 +1,43 @@
-/* ===== Typewriter ===== */
-const textArray = [
-  "Trainee Web Developer",
-  "AI-Assisted Development",
-  "Building modern, responsive websites"
-];
+window.addEventListener('DOMContentLoaded', () => {
+  const lines = document.querySelectorAll("#typewriter-text li");
 
-const typeElement = document.getElementById("typewriter");
+  let currentLine = 0;
 
-let textIndex = 0;
-let charIndex = 0;
-let isDeleting = false;
+  function typeLine(line, callback) {
+    // Grab only the first text node (before any <img>)
+    const textNode = Array.from(line.childNodes).find(n => n.nodeType === Node.TEXT_NODE);
+    const text = textNode ? textNode.textContent : "";
+    if (textNode) textNode.textContent = ""; // clear the text for typing
 
-function type() {
-  const currentText = textArray[textIndex];
+    line.style.opacity = 1; // make the line visible
 
-  if (isDeleting) {
-    charIndex--;
-  } else {
-    charIndex++;
+    let charIndex = 0;
+    const interval = setInterval(() => {
+      if (charIndex < text.length) {
+        textNode.textContent += text[charIndex];
+        charIndex++;
+      } else {
+        clearInterval(interval);
+        // reveal any child elements like <img>
+        line.querySelectorAll("img").forEach(img => {
+          img.style.display = "block";
+        });
+        callback(); // move to next line
+      }
+    }, 50); // typing speed
   }
 
-  typeElement.textContent = currentText.substring(0, charIndex);
-
-  let speed = isDeleting ? 50 : 100;
-
-  if (!isDeleting && charIndex === currentText.length) {
-    speed = 1500;
-    isDeleting = true;
-  } else if (isDeleting && charIndex === 0) {
-    isDeleting = false;
-    textIndex = (textIndex + 1) % textArray.length;
-    speed = 500;
+  function startTypewriter() {
+    function nextLine() {
+      if (currentLine < lines.length) {
+        typeLine(lines[currentLine], () => {
+          currentLine++;
+          setTimeout(nextLine, 500); // delay between lines
+        });
+      }
+    }
+    nextLine();
   }
 
-  setTimeout(type, speed);
-}
-
-type();
-
-/* ===== Scroll Reveal ===== */
-const reveals = document.querySelectorAll(".project-card");
-
-
-function revealOnScroll() {
-  reveals.forEach((section) => {
-    const windowHeight = window.innerHeight;
-    const sectionTop = section.getBoundingClientRect().top;
-    const revealPoint = 100;
-
-    if (sectionTop < windowHeight - revealPoint) {
-      section.classList.add("active");
-    }
-  });
-}
-
-window.addEventListener("scroll", revealOnScroll);
-revealOnScroll();
-/* ===== Project Slide-in (Intersection Observer) ===== */
-document.addEventListener("DOMContentLoaded", () => {
-  const cards = document.querySelectorAll(".project-card");
-
-  const observer = new IntersectionObserver(
-    (entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add("show");
-        }
-      });
-    },
-    {
-      threshold: 0.2
-    }
-  );
-
-  cards.forEach(card => observer.observe(card));
+  startTypewriter();
 });

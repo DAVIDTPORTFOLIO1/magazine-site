@@ -1,0 +1,252 @@
+/* ===== Devices ===== */
+
+/* MacBook styles */
+.macbook-air {
+  display: inline-block;
+  position: relative;
+  text-align: left;
+  width: 133.35em;
+  height: 91em;
+  font-size: 6px;
+  box-sizing: border-box;
+  border-radius: 5.17em;
+  border-bottom-left-radius: 3em;
+  border-bottom-right-radius: 3em;
+  margin: 0 15em 4em 15em;
+  padding: 6.67em 6.67em 9.34em 6.67em;
+  box-shadow: 
+    0 2em 1em -2em, 
+    inset 0 0 0.17em #666, 
+    inset 0 0 0 0.5em #fafafb, 
+    inset 0 0 0.17em 0.67em rgba(255, 255, 255, 0.4),
+    inset 0 -15em 16.67em -16.67em rgba(0, 0, 0, 0.5),
+    inset 0 -2em 0.5em -1em #aaa,
+    inset 0 0 0 1em #252525,
+    inset 0 0 0 1.17em rgba(255,255,255,0.4),
+    inset 50em 50em 33.34em -58.34em rgba(0,0,0,0.1),
+    inset 50em 50em 50em -50em rgba(0,0,0,0.2),
+    inset -33.34em -41.67em 33.34em -50em #c5c4c9,
+    inset 0 6.17em 0.17em #efeff2,
+    inset 6.17em 0 0.17em #efeff2,
+    inset -6.17em 0 0.17em #efeff2,
+    inset 0 -8.67em 0.17em #efeff2,
+    inset 0 6.5em white,
+    inset 6.5em 0 white,
+    inset -6.5em -6.5em white,
+    inset 0 -9.1em white,
+    inset 0 6.67em #888,
+    inset 6.67em 0 #888,
+    inset -6.66em -6.67em #888,
+    inset 0 -9.17em #888,
+    inset 0 0 0 166.67em #222,
+    0 0 0.17em black;
+
+  /* Slide-in animation */
+  animation: slideIn 2s ease-out forwards;
+  transform-origin: bottom center;
+}
+
+/* MacBook label */
+.macbook-air::before {
+  content: 'Daves';
+  font-family: MyriadPro-Regular, 'Myriad Pro Regular', MyriadPro, 'Myriad Pro', 'Trebuchet MS', sans-serif;
+  font-weight: 600;
+  font-size: 2.4em;
+  text-shadow: 31.39em -2.3em #444;
+  color: transparent;
+  position: absolute;
+  bottom: -1.12em;
+  left: -6.25em;
+  width: 67.99em;
+  height: 1.53em;
+  border-bottom-left-radius: 13.89em 1.39em;
+  border-bottom-right-radius: 13.89em 1.39em;
+  box-shadow: 
+    inset -0.42em 0 0.42em -0.42em rgba(0, 0, 0, 0.7),
+    inset 0.42em 0 0.42em -0.42em rgba(0, 0, 0, 0.7),
+    inset 0 6.81em 0.42em -6.95em rgba(0, 0, 0, 0.7),
+    inset 0 7.16em 0.14em -6.95em rgba(255, 255, 255, 0.9),
+    inset 0 -694.87em 1.67em -694.45em black,
+    inset 0em -0.91em 0.21em #abaab0,
+    inset 27.92em 0 0.07em #abaab0,
+    inset 27.92em -0.07em #ddd,
+    inset -27.92em 0 #abaab0,
+    inset -27.92em -0.07em #ddd,
+    inset 0em -0.98em 0 #ddd,
+    inset 0em -1.05em #bebbc5,
+    inset 28.34em -0.07em 0.42em rgba(0, 0, 0, 0.5),
+    inset 27.92em 0 0.42em rgba(0, 0, 0, 0.4),
+    inset -28.34em -0.07em 0.42em rgba(0, 0, 0, 0.5),
+    inset -27.92em 0 0.42em rgba(0, 0, 0, 0.4),
+    0 0 0.07em black,
+    0 0.77em 0.42em -0.7em black,
+    inset 0 1.5em white;
+}
+
+.macbook-air::after {
+  content: 'Laptop';
+  font-family: MyriadPro, Verdana, sans-serif;
+  color: #444;
+  font-size: 2.4em;
+  position: absolute;
+  bottom: 1.88em;
+  left: 53%;
+  width: 0.84em;
+  height: 0.84em;
+  border-radius: 50%;
+}
+
+/* Keyframes */
+@keyframes lidOpen {
+  0% { transform: rotateX(-90deg); }
+  100% { transform: rotateX(0deg); }
+}
+
+/* Center the MacBook itself on page */
+.macbook-container {
+  display: flex;
+  justify-content: center;   /* horizontal only */
+  align-items: flex-start;   /* top of page, not vertically centered */
+  margin: 3rem 0;
+}
+
+/* MacBook screen */
+.macbook-air .screen {
+  width: 100%;
+  height: 100%;
+  background: #111;
+  color: #6329e9;
+  font-family: system-ui, sans-serif;
+  font-size: 1.2rem;
+  line-height: 1.3;
+  text-align: left;
+
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;     /* top-left alignment */
+  justify-content: flex-start; /* start at top */
+  padding: 1.5rem;
+  box-sizing: border-box;
+  overflow-y: auto;
+}
+
+/* Typewriter list */
+#typewriter-text {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;      /* left-aligned */
+  justify-content: flex-start;  /* start at top */
+  width: 100%;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+#typewriter-text li {
+  opacity: 0;
+  display: block;
+  font-size: 1.2rem;
+  line-height: 1.3;
+  margin-bottom: 0.2rem;
+  text-align: left;
+  white-space: normal;
+  word-wrap: break-word;
+}
+
+#typewriter-text li img#lemonade-img {
+  display: none; /* revealed by JS */
+  max-width: 150px;
+  margin-top: 0.25rem;
+}
+
+/* Responsive text */
+@media (max-width: 1200px) {
+  .macbook-air {
+    max-width: 90%;
+    padding: 5em;
+  }
+  .macbook-air .screen { font-size: 0.9rem; }
+}
+
+@media (max-width: 900px) {
+  .macbook-air { padding: 4em; }
+  .macbook-air .screen { font-size: 0.8rem; }
+}
+
+@media (max-width: 600px) {
+  .macbook-air { padding: 3em; }
+  .macbook-air .screen { font-size: 0.7rem; padding: 0.5rem; }
+}
+
+/* ===== Keyframes ===== */
+@keyframes slideIn {
+  0% { transform: translateX(-150%) scale(0.8); opacity: 0; }
+  100% { transform: translateX(0) scale(1); opacity: 1; }
+}
+
+#lemonade-img {
+  display: none;      /* hidden until JS triggers it */
+  max-width: 200px;
+  margin-top: 1rem;
+}
+
+/* ===== Typewriter screen & image fixes ===== */
+.macbook-air .screen {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;       /* text top-left */
+  justify-content: flex-start;    /* start at top */
+  padding: 1.5rem;
+  background: #111;
+  color: #edd23a;
+  overflow-y: auto;
+}
+
+#typewriter-text {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;       /* left-aligned text */
+  justify-content: flex-start;    /* stack from top */
+  width: 100%;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+#typewriter-text li {
+  opacity: 0;            /* hidden until typed */
+  font-size: 1rem;       /* smaller font */
+  line-height: 1.2;      /* tighter line spacing */
+  text-align: left;
+  margin-bottom: 0.15rem; /* less space between lines */
+}
+
+
+#typewriter-text li img#lemonade-img {
+  display: none; /* revealed by JS */
+  max-width: 200px;
+  margin-top: 0.25rem;
+}
+/* Links inside typewriter lines */
+#typewriter-text li a {
+  color: #ff0000;          /* bright color for links */
+  text-decoration: underline; /* optional, makes links stand out */
+}
+
+#typewriter-text li a:hover {
+  color: #00d4b0;          /* slightly darker on hover for effect */
+}
+/* Mobile scaling for MacBook hero */
+@media (max-width: 900px) {
+  .macbook-container {
+    transform: scale(0.7);
+    transform-origin: top center;
+  }
+}
+
+@media (max-width: 600px) {
+  .macbook-container {
+    transform: scale(0.55);
+    transform-origin: top center;
+  }
+}
