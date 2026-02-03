@@ -84,6 +84,28 @@
 <footer class="site-footer">
   <p>© 2026 David Tozer - Stillwater & Light Magazine</p>
 </footer>
+<script>
+const cards = document.querySelectorAll(".card");
+
+/* show cards on page load */
+window.addEventListener("load", () => {
+  cards.forEach((card, i) => {
+    setTimeout(() => card.classList.add("show"), i * 120);
+  });
+});
+
+/* show cards when scrolling into view */
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add("show");
+    }
+  });
+}, { threshold: 0.2 });
+
+cards.forEach(card => observer.observe(card));
+</script>
+
 
 
 </body>

@@ -111,9 +111,19 @@ footer {
   border-radius: 12px;
   overflow: hidden;
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-display: block;
+  transition: transform 0.7s ease, box-shadow 0.3s ease, opacity 0.7s ease;
+  display: block;
+
+  /* start hidden */
+  transform: rotateY(60deg);
+  opacity: 0;
 }
+
+.card.show {
+  transform: rotateY(0deg);
+  opacity: 1;
+}
+
 
 .card img {
   width: 100%;
